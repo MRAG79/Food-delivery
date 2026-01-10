@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.category-item{
+  text-align: center;
+}
