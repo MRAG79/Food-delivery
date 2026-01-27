@@ -3,7 +3,7 @@ import { GiChickenOven } from "react-icons/gi";
 
 const Card = ( {id, name, image, price, type}) => {
   return (
-    <div key={id} className="w-70 h-100 bg-white p-4 rounded-lg flex flex-col gap-3 shadow-lg hover:border-2 border-green-300">
+    <div key={id} className="w-70 h-100 bg-white p-4 rounded-lg flex flex-col gap-3 shadow-lg hover:border-2 border-green-300 cursor-poi">
       <div className="w-full h-[60%] overflow-hidden rounded-lg">
         <img src={image} alt={image} className="object-cover" />
       </div>
