@@ -6,10 +6,10 @@ const UserContext = ({ children }) => {
   let [cate, setCate] = useState(food_items);
   let [input, setInput] = useState("");
   let data = {
-    input,
-    setInput,
     cate,
-    setCate
+    setCate,
+    input,
+    setInput
   };
   return (
     <div>

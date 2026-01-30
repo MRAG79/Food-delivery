@@ -14,7 +14,7 @@ const Card = ( {id, name, image, price, type}) => {
           {type === "veg" ? <LuLeafyGreen /> : <GiChickenOven />}<span>{type}</span>
         </div>
       </div>
-      <button className="w-full p-3 rounded-lg my-2 text-white bg-green-500 hover:bg-green-400 cursor-pointer transition-all duration-200">Add to Dish</button>
+      <button className="w-full p-3 rounded-lg my-2 text-white bg-green-500 hover:bg-green-400 cursor-pointer transition-all duration-200">Add to Cart</button>
     </div>
   )
 }
