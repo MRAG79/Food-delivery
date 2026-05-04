@@ -5,11 +5,15 @@ import { food_items } from "../food";
 const UserContext = ({ children }) => {
   let [cate, setCate] = useState(food_items);
   let [input, setInput] = useState("");
+  let [showCart, setShowCart] = useState(false);
+
   let data = {
     cate,
     setCate,
     input,
-    setInput
+    setInput,
+    showCart,
+    setShowCart
   };
   return (
     <div>

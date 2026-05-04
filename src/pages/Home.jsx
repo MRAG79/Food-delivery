@@ -1,13 +1,14 @@
 import Nav from "../components/Nav";
 import Categories from "../Category";
 import Card from "../components/Card";
+import Card2 from "../components/Card2";
 import { food_items } from "../food";
 import { useContext } from "react";
 import { dataContext } from "../context/UserContext";
 import { RxCross2 } from "react-icons/rx";
 
 function Home() {
-  let { cate, setCate, input } = useContext(dataContext);
+  let { cate, setCate, input, showCart, setShowCart } = useContext(dataContext);
   const filter = (category) => {
     if (category === "All") {
       setCate(food_items);
@@ -49,11 +50,12 @@ function Home() {
         ))}
       </div>
 
-      <div className="w-[40vw] h-full fixed top-0 right-0 bg-white shadow-xl p-6">
-        <header className="w-full flex justify-between items-center">
+      <div className={`w-full md:w-[40vw] h-full fixed top-0 right-0 bg-white shadow-xl p-6 transition-all duration-500 ${showCart?"translate-x-0":"translate-x-full"}`}>
+        <header className="w-full flex justify-between items-center ">
           <span className="text-green-400 font-semibold text-[18px]">Order items</span>
-          <RxCross2 className="text-green-400 hover:text-gray-500 w-5 h-5 text-[18px] font-semibold cursor-pointer" />
+          <RxCross2 className="w-5 h-5 text-green-400 hover:text-gray-500 text-[18px] font-semibold cursor-pointer" onClick={()=>setShowCart(false)} />
         </header>
+        <Card2 />
       </div>
     </div>
   );

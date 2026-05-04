@@ -6,12 +6,13 @@ import { dataContext } from "../context/UserContext";
 import { food_items } from "../food";
 
 function Nav() {
-  let { input, setInput, cate, setCate } = useContext(dataContext);
+  let { input, setInput, cate, setCate, showCart, setShowCart } =
+    useContext(dataContext);
   useEffect(() => {
     let newlist = food_items.filter(
       (item) =>
         item.food_name.includes(input) ||
-        item.food_name.toLowerCase().includes(input)
+        item.food_name.toLowerCase().includes(input),
     );
     setCate(newlist);
   }, [input]);
@@ -34,7 +35,12 @@ function Nav() {
           value={input}
         />
       </form>
-      <div className="h-15 w-15 bg-white flex justify-center items-center rounded-md shadow-lg relative">
+      <div
+        className="h-15 w-15 bg-white flex justify-center items-center rounded-md shadow-lg relative cursor-pointer"
+        onClick={() => {
+          setShowCart(true);
+        }}
+      >
         <span className="absolute top-0 right-2 text-green-500 font-bold text=[18px]">
           0
         </span>
